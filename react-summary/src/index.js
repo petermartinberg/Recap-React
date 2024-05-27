@@ -18,7 +18,8 @@ const App = () => {
   const filteredCats = selectedBreed
   ? katzen.filter(cat => cat.Namen === selectedBreed)
   : katzen;
-
+  // Für die .map-Funktion braucht React einen führenden unique Key, da sonst die Array-Elemente 
+  // nicht eindeutig identifiziert werden können. Dieser wird immer mit key={index} angegeben!
   return (
     <div>
         <Suche selectedBreed={selectedBreed} handleBreedChange={handleBreedChange} katzen={katzen} />
